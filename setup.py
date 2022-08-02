@@ -21,7 +21,7 @@ setup_args = {
     "url": "https://github.com/CharlRitter/rank-be-coding-test",
     "packages": find_packages(),
     "install_requires": requires,
-    "python_requires": "==3.10",
+    "python_requires": ">=3.10",
 }
 
 setup(**setup_args)

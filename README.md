@@ -58,8 +58,8 @@ make run
 ```
 
 ## Problem Statement
-![page1](https://github.com/CharlRitter/rank-be-coding-test/main/assets/problem_statement_1.png)
-![page2](https://github.com/CharlRitter/rank-be-coding-test/main/assets/problem_statement_2.png)
+![page1](https://github.com/CharlRitter/rank-be-coding-test/blob/main/assets/problem_statement_1.png)
+![page2](https://github.com/CharlRitter/rank-be-coding-test/blob/main/assets/problem_statement_2.png)
 
 ## Miscellaneous
 ### Running the tests
