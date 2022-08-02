@@ -1,0 +1,4 @@
+[flake8]
+format = default
+show-source = True
+max-line-length = 120

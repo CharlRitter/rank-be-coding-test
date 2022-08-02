@@ -1,0 +1,12 @@
+-c requirements.txt
+
+black
+coverage
+flake8
+pre-commit
+pylint
+pylint-quotes
+
+mock
+mockito
+pytest
