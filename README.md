@@ -9,9 +9,10 @@
 - [Table of Contents](#table-of-contents)
 - [Project Structure](#project-structure)
 - [Installation Instructions](#installation-instructions)
-  - [Update requirements.txt](#update-requirementstxt)
-  - [Update dependencies in virtual environment](#update-dependencies-in-virtual-environment)
-- [Execution Instructions](#execution-instructions)
+  - [Update requirements](#update-requirements)
+  - [Installs dependencies](#installs-dependencies)
+  - [Running the application](#running-the-application)
+- [How to run this project](#how-to-run-this-project)
 - [Problem Statement](#problem-statement)
 - [Miscellaneous](#miscellaneous)
   - [Running the tests](#running-the-tests)
@@ -24,38 +25,43 @@
 ├── Makefile
 ├── README.md
 ├── application
-│   └── main.py
+│   ├── cli.py
+│   └── rank_results_calculator.py
 ├── assets
 │   ├── problem_statement_1.png
 │   └── problem_statement_2.png
 ├── dev-requirements.in
 ├── dev-requirements.txt
-├── match_results
-│   └── example_results.txt
 ├── pre-commit-config.yaml
 ├── pyproject.toml
 ├── requirements.in
 ├── requirements.txt
+├── setup.py
+├── test_results
+│   └── example_results.txt
 ├── tests
 │   └── test_main.py
 └── version
 ```
 
 ## Installation Instructions
-### Update requirements.txt
+### Update requirements
 ```bash
 make update
 ```
 
-### Update dependencies in virtual environment
+### Installs dependencies
 ```bash
 make deps
 ```
 
-## Execution Instructions
+### Running the application
 ```bash
 make run
 ```
+
+## How to run this project
+1.
 
 ## Problem Statement
 ![page1](https://github.com/CharlRitter/rank-be-coding-test/blob/main/assets/problem_statement_1.png)

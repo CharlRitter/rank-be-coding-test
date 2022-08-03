@@ -4,6 +4,8 @@
 #
 #    pip-compile --no-emit-index-url --no-emit-trusted-host dev-requirements.in
 #
+altgraph==0.17.2
+    # via pyinstaller
 astroid==2.11.7
     # via pylint
 attrs==22.1.0
@@ -63,6 +65,10 @@ pycodestyle==2.9.0
     # via flake8
 pyflakes==2.5.0
     # via flake8
+pyinstaller==5.3
+    # via -r dev-requirements.in
+pyinstaller-hooks-contrib==2022.8
+    # via pyinstaller
 pylint==2.14.5
     # via
     #   -r dev-requirements.in

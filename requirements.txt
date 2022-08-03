@@ -4,3 +4,5 @@
 #
 #    pip-compile --no-emit-index-url --no-emit-trusted-host requirements.in
 #
+argparse==1.4.0
+    # via -r requirements.in
