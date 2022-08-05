@@ -2,14 +2,15 @@ default_language_version:
     python: python3.10
 repos:
 -   repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
     hooks:
     -   id: isort
-        args: ["--profile", "black", "--line-length", "120"]
 -   repo: https://github.com/psf/black
+    rev: 22.6.0
     hooks:
     -   id: black
-        language_version: python3.10
 -   repo: https://gitlab.com/pycqa/flake8
+    rev: 5.0.4
     hooks:
     -   id: flake8
 -   repo: local
@@ -19,5 +20,3 @@ repos:
         language: system
         entry: pylint --rcfile .pylintrc
         types: [python]
-        args:
-        -   -d duplicate-code

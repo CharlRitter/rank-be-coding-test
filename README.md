@@ -11,7 +11,6 @@
 - [Installation Instructions](#installation-instructions)
   - [Update requirements](#update-requirements)
   - [Installs dependencies](#installs-dependencies)
-  - [Running the application](#running-the-application)
 - [How to run this project](#how-to-run-this-project)
 - [Problem Statement](#problem-statement)
 - [Miscellaneous](#miscellaneous)
@@ -34,16 +33,16 @@
 ├── dev-requirements.txt
 ├── lib
 │   └── constants.py
-├── pre-commit-config.yaml
 ├── pyproject.toml
 ├── requirements.in
 ├── requirements.txt
 ├── results
 ├── setup.py
-├── test_results
-│   └── example_results.txt
+├── test_input
+│   └── example_input.txt
 ├── tests
-│   └── test_main.py
+│   ├── test_cli.py
+│   └── test_ranking_results_calculator.py
 └── version
 ```
 
@@ -58,13 +57,8 @@ make update
 make deps
 ```
 
-### Running the application
-```bash
-make run
-```
-
 ## How to run this project
-1.
+1. TODO
 
 ## Problem Statement
 ![page1](https://github.com/CharlRitter/span-ranking-coding-test/blob/main/assets/problem_statement_1.png)

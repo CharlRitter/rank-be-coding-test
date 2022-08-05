@@ -28,6 +28,3 @@ lint:
 
 test:
 	pytest --disable-warnings tests
-
-run:
-
