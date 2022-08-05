@@ -1,4 +1,4 @@
-checkfiles = script tests
+checkfiles = application tests setup.py
 
 help:
 	@echo  "usage: make <target>"
@@ -18,12 +18,13 @@ deps:
 	@pip install -q pip-tools
 	@pip-sync requirements.txt dev-requirements.txt
 	@pip install --no-cache-dir -qe .
+	@pre-commit install
 
 lint:
 	isort $(checkfiles)
 	black $(checkfiles)
 	-flake8 $(checkfiles)
-	-pylint --load-plugins pylint_quotes $(checkfiles) -r n -f colorized
+	-pylint $(checkfiles) -r n -f colorized
 
 test:
 	pytest --disable-warnings tests

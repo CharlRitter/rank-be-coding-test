@@ -1,7 +1,7 @@
-<h1 align="center"> Rank BE Coding Test </h1> <br>
+<h1 align="center"> SPAN BE Coding Test </h1> <br>
 
 <p align="center">
-  This is my solution to the Back-End coding challenge as part of Rank's interview process
+  This is my solution to the Back-End coding challenge as part of SPAN's interview process
 </p>
 
 
@@ -26,16 +26,19 @@
 ├── README.md
 ├── application
 │   ├── cli.py
-│   └── rank_results_calculator.py
+│   └── ranking_results_calculator.py
 ├── assets
 │   ├── problem_statement_1.png
 │   └── problem_statement_2.png
 ├── dev-requirements.in
 ├── dev-requirements.txt
+├── lib
+│   └── constants.py
 ├── pre-commit-config.yaml
 ├── pyproject.toml
 ├── requirements.in
 ├── requirements.txt
+├── results
 ├── setup.py
 ├── test_results
 │   └── example_results.txt
@@ -64,8 +67,8 @@ make run
 1.
 
 ## Problem Statement
-![page1](https://github.com/CharlRitter/rank-be-coding-test/blob/main/assets/problem_statement_1.png)
-![page2](https://github.com/CharlRitter/rank-be-coding-test/blob/main/assets/problem_statement_2.png)
+![page1](https://github.com/CharlRitter/span-ranking-coding-test/blob/main/assets/problem_statement_1.png)
+![page2](https://github.com/CharlRitter/span-ranking-coding-test/blob/main/assets/problem_statement_2.png)
 
 ## Miscellaneous
 ### Running the tests

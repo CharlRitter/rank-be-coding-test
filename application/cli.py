@@ -1,15 +1,16 @@
 import argparse
 import os
-import sys
 import re
-from rank_results_calculator import ResultCalculator
+import sys
+
+from ranking_results_calculator import ResultCalculator
 
 with open("version", encoding="utf8") as version_file:
     version = version_file.read().strip()
 
 parser = argparse.ArgumentParser(
     description="Calculate the ranking table for a league's results",
-    prog="rank_results_calculator",
+    prog="ranking_results_calculator",
     epilog="If no flags were provided, %(prog)s will take manual input.",
 )
 parser.version = version
@@ -21,7 +22,7 @@ parser.add_argument("-v", "--version", action="version", help="Shows the version
 
 args = parser.parse_args()
 input_path = args.path
-input = []
+raw_input = []
 
 
 if not input_path:
@@ -39,7 +40,7 @@ if not input_path:
         elif result.lower() == "exit":
             break
         else:
-            input.append(result)
+            raw_input.append(result)
 
 elif not os.path.exists(input_path):
     print("The path specified does not exist")
@@ -49,6 +50,9 @@ elif not input_path.lower().endswith((".txt")):
     sys.exit()
 else:
     with open(input_path, "r", encoding="utf8") as file:
-        input = [result.rstrip('\n') for result in file]
+        raw_input = [result.rstrip("\n") for result in file]
 
-calculator = ResultCalculator(input)
+calculator = ResultCalculator(raw_input)
+calculator.process_results()
+
+print("Please find the text file containing the Leaderboard in the results folder")
