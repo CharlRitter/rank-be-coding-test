@@ -24,25 +24,27 @@
 ├── Makefile
 ├── README.md
 ├── application
-│   ├── cli.py
-│   └── ranking_results_calculator.py
+│   ├── cli.py
+│   └── ranking_results_calculator.py
 ├── assets
-│   ├── problem_statement_1.png
-│   └── problem_statement_2.png
+│   ├── problem_statement_1.png
+│   └── problem_statement_2.png
 ├── dev-requirements.in
 ├── dev-requirements.txt
 ├── lib
-│   └── constants.py
+│   └── constants.py
 ├── pyproject.toml
 ├── requirements.in
 ├── requirements.txt
 ├── results
+├── scripts
+│   └── test.sh
 ├── setup.py
 ├── test_input
-│   └── example_input.txt
+│   └── example_input.txt
 ├── tests
-│   ├── test_cli.py
-│   └── test_ranking_results_calculator.py
+│   ├── test_cli.py
+│   └── test_ranking_results_calculator.py
 └── version
 ```
 

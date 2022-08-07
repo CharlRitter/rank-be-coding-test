@@ -27,4 +27,4 @@ lint:
 	-pylint $(checkfiles) -r n -f colorized
 
 test:
-	pytest --disable-warnings tests
+	scripts/test.sh

@@ -1,13 +1,12 @@
 -c requirements.txt
 
-pyinstaller
 black
 coverage
 flake8
-pre-commit
-pylint
 isort
-
-mock
 mockito
+parameterized
+pre-commit
+pyinstaller
+pylint
 pytest
