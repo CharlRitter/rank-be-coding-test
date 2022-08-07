@@ -1,5 +1,5 @@
 """
-Tests the RankingResultsCalculator class.
+Tests the RankingCalculator class.
 """
 from typing import Dict, Tuple
 from unittest import TestCase
@@ -7,13 +7,13 @@ from unittest import TestCase
 from mockito import expect, unstub, verifyNoUnwantedInteractions
 from parameterized import parameterized
 
-from application.ranking_results_calculator import RankingResultsCalculator
+from application.ranking_calculator import RankingCalculator
 from lib.constants import SCORE_POINTS
 
 
-class TestRankingResultsCalculator(TestCase):
+class TestRankingCalculator(TestCase):
     def setUp(self) -> None:
-        self.ranking_results_calculator = RankingResultsCalculator()
+        self.ranking_calculator = RankingCalculator()
 
     def tearDown(self) -> None:
         verifyNoUnwantedInteractions()
@@ -42,7 +42,7 @@ class TestRankingResultsCalculator(TestCase):
         """
         Test the calculation of ranking points
         """
-        assert self.ranking_results_calculator.__calculate_points__(**test_input) == test_output
+        assert self.ranking_calculator.__calculate_points__(**test_input) == test_output
 
     @parameterized.expand(
         [
@@ -87,7 +87,7 @@ class TestRankingResultsCalculator(TestCase):
         """
         Test the sorting of the leaderboard
         """
-        assert self.ranking_results_calculator.__sort_leaderboard__(test_input) == test_output
+        assert self.ranking_calculator.__sort_leaderboard__(test_input) == test_output
 
     def test_generate_results_file_success(self) -> None:
         """
@@ -95,7 +95,7 @@ class TestRankingResultsCalculator(TestCase):
         """
         leaderboard = {"FC Awesome": 3, "Snakes": 3, "Lions": 0, "Tarantulas": 0}
 
-        assert self.ranking_results_calculator.__generate_results_file__(leaderboard) is None
+        assert self.ranking_calculator.__generate_results_file__(leaderboard) is None
 
     def test_generate_results_file_fail(self) -> None:
         """
@@ -104,7 +104,7 @@ class TestRankingResultsCalculator(TestCase):
         leaderboard = ["This is not the right format"]
 
         with self.assertRaises(SystemExit):
-            self.ranking_results_calculator.__generate_results_file__(leaderboard)
+            self.ranking_calculator.__generate_results_file__(leaderboard)
 
     def test_process_results_success(self) -> None:
         """
@@ -117,13 +117,11 @@ class TestRankingResultsCalculator(TestCase):
         sorted_leaderboard = {"FC Awesome": 3, "Snakes": 3, "Lions": 0, "Tarantulas": 0}
         raw_input = ["Lions 5, Snakes 7", "Tarantulas 5, FC Awesome 7"]
 
-        expect(RankingResultsCalculator, times=2).__calculate_points__(score_1, score_2).thenReturn(points)
-        expect(RankingResultsCalculator, times=1).__sort_leaderboard__(unsorted_leaderboard).thenReturn(
-            sorted_leaderboard
-        )
-        expect(RankingResultsCalculator, times=1).__generate_results_file__(sorted_leaderboard).thenReturn(None)
+        expect(RankingCalculator, times=2).__calculate_points__(score_1, score_2).thenReturn(points)
+        expect(RankingCalculator, times=1).__sort_leaderboard__(unsorted_leaderboard).thenReturn(sorted_leaderboard)
+        expect(RankingCalculator, times=1).__generate_results_file__(sorted_leaderboard).thenReturn(None)
 
-        assert self.ranking_results_calculator.process_results(raw_input) is None
+        assert self.ranking_calculator.process_results(raw_input) is None
 
     def test_process_results_fail(self) -> None:
         """
@@ -132,4 +130,4 @@ class TestRankingResultsCalculator(TestCase):
         raw_input = ["This is not the right format"]
 
         with self.assertRaises(SystemExit):
-            self.ranking_results_calculator.process_results(raw_input)
+            self.ranking_calculator.process_results(raw_input)

@@ -9,6 +9,8 @@
 - [Table of Contents](#table-of-contents)
 - [Project Structure](#project-structure)
 - [How To Run The CLI](#how-to-run-the-cli)
+  - [1. Compiled executale (preferred)](#1-compiled-executale-preferred)
+  - [2. Directly executing the CLI using](#2-directly-executing-the-cli-using)
 - [Technologies Used](#technologies-used)
 - [Installation Instructions](#installation-instructions)
   - [Update requirements](#update-requirements)
@@ -21,39 +23,60 @@
 
 
 ## Project Structure
+```bash
 .
 ├── Makefile
 ├── README.md
 ├── application
-│   ├── cli.py
-│   └── ranking_results_calculator.py
+│   └── ranking_calculator.py
 ├── assets
-│   ├── problem_statement_1.png
-│   └── problem_statement_2.png
+│   ├── problem_statement_1.png
+│   └── problem_statement_2.png
+├── cli.py
 ├── dev-requirements.in
 ├── dev-requirements.txt
 ├── lib
-│   └── constants.py
+│   └── constants.py
 ├── pyproject.toml
 ├── requirements.in
 ├── requirements.txt
 ├── results
 ├── scripts
-│   └── test.sh
+│   └── test.sh
 ├── setup.py
 ├── test_input
-│   └── example_input.txt
+│   └── example_input.txt
 ├── tests
-│   ├── test_cli.py
-│   └── test_ranking_results_calculator.py
+│   ├── test_cli.py
+│   └── test_ranking_calculator.py
 └── version
+```
 
 ## How To Run The CLI
-1. TODO
+The CLI has 2 flags to specify input. `-i, --input` indicates manual input and `-p path, --path path` provides the path to the file to be used as input.
+The CLI also has 2 suppourting flags. `-h, --help` for help and `-v, --version ` for the CLI's version.
+
+There are 2 ways one can run this project
+
+### 1. Compiled executale (preferred)
+1. Clone the repo
+2. Create a virtual environment
+3. Run `make deps`
+4. Run `make compile`
+5. In the root folder a new exe file should appear
+6. From the root folder the CLI can be started using the executale. PS. try `ranking_calculator -h` (Since this project should run on OSX, I will have included a OSX compatible executable file in the root folder already)
+
+### 2. Directly executing the CLI using
+1. Clone the repo
+2. Create a virtual environment
+3. Run `make deps`
+4. From the root folder the CLI can be started using python. PS. try `python cli.py -h`
+
+
 
 ## Technologies Used
 - For the creation of the CLI, the `argparse` library was used.
-- For compiling the application into an executable file the `pyinstaller` library was used.
+- For compiling the application into an executable file the `pyinstaller` library was used. The executale has to be regenerated on different operating systems, as it generates and executable file for that type of operating system.
 - For testing the `pytest`, `coverage`, `mockito` & `parameterized` libraries were used.
 - For code quality the `pre-commit`, `black`, `flake8`, `isort`, & `pylint` libraries were used.
 - For dependency management the `pip-tools` library was used.

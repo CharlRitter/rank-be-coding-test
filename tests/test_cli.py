@@ -7,8 +7,8 @@ from unittest import TestCase
 
 from mockito import expect, unstub, verifyNoUnwantedInteractions
 
-from application.cli import CLI
-from application.ranking_results_calculator import RankingResultsCalculator
+from application.ranking_calculator import RankingCalculator
+from cli import CLI
 
 
 class TestCLI(TestCase):
@@ -22,7 +22,7 @@ class TestCLI(TestCase):
 
     def test_main(self) -> None:
         """
-        Test the cli main method
+        Test the cli method
         """
         raw_input = [
             "Lions 3, Snakes 3",
@@ -33,9 +33,9 @@ class TestCLI(TestCase):
         ]
 
         expect(CLI, times=1).__get_input__(True, None).thenReturn(raw_input)
-        expect(RankingResultsCalculator, times=1).process_results(raw_input).thenReturn(None)
+        expect(RankingCalculator, times=1).process_results(raw_input).thenReturn(None)
 
-        assert self.cli.main(["-i"]) is None
+        assert self.cli.cli(["-i"]) is None
 
     def test_get_input_success_manual_input(self) -> None:
         """
