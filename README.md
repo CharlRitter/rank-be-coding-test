@@ -76,7 +76,7 @@ There are 2 ways one can run this project
 
 ## Technologies Used
 - For the creation of the CLI, the `argparse` library was used.
-- For compiling the application into an executable file the `pyinstaller` library was used. The executale has to e regenerated on different operating systems, as it generates and executable file for that type of operating system.
+- For compiling the application into an executable file the `pyinstaller` library was used. The executale has to be regenerated on different operating systems, as it generates and executable file for that type of operating system.
 - For testing the `pytest`, `coverage`, `mockito` & `parameterized` libraries were used.
 - For code quality the `pre-commit`, `black`, `flake8`, `isort`, & `pylint` libraries were used.
 - For dependency management the `pip-tools` library was used.
