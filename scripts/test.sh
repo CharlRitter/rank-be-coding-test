@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Run all tests with coverage report
 coverage erase
-coverage run --source=application -m pytest -v tests/
+coverage run --source=application,cli -m pytest -v tests/
 passed=$?
 coverage report -m
 coverage xml

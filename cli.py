@@ -80,7 +80,7 @@ class CLI:
         print("Please find the text file containing the leaderboard in the results folder.")
 
 
-def main():
+def main():  # pragma: no cover
     cli = CLI()
     cli.cli()
 
