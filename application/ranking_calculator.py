@@ -5,7 +5,7 @@ from typing import Dict, List, Tuple
 from lib.constants import SCORE_POINTS
 
 
-class RankingResultsCalculator:
+class RankingCalculator:
     def __calculate_points__(self, score_1: int, score_2: int) -> Tuple[int, int]:
         if score_1 > score_2:
             return SCORE_POINTS["WIN"], SCORE_POINTS["LOSS"]

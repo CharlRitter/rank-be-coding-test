@@ -22,6 +22,9 @@ setup_args = {
     "packages": find_packages(),
     "install_requires": requires,
     "python_requires": ">=3.10",
+    "entry_points": {
+        "console_scripts": ["ranking_calculator=cli:main"],
+    },
 }
 
 setup(**setup_args)

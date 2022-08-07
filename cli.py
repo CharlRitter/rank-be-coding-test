@@ -3,7 +3,7 @@ import sys
 from argparse import ArgumentParser
 from typing import List
 
-from application.ranking_results_calculator import RankingResultsCalculator
+from application.ranking_calculator import RankingCalculator
 
 
 class CLI:
@@ -13,7 +13,7 @@ class CLI:
 
         parser = ArgumentParser(
             description="Calculate the ranking table for a league's results",
-            prog="ranking_results_calculator",
+            prog="ranking_calculator",
             epilog="If no flags were provided, %(prog)s will take manual input.",
         )
         parser.version = version
@@ -65,23 +65,25 @@ class CLI:
             print("No input provided. Application is quitting...")
             sys.exit()
 
-        print(raw_input)
-
         return raw_input
 
-    def main(self, argv: List = None) -> None:
+    def cli(self, argv: List = None) -> None:
         parser = self.__create_parser__()
         args = parser.parse_args(argv)
 
         raw_input = self.__get_input__(args.input, args.path)
 
-        calculator = RankingResultsCalculator()
+        calculator = RankingCalculator()
         calculator.process_results(raw_input)
 
         print("Leaderboard ranking completed successfully.")
         print("Please find the text file containing the leaderboard in the results folder.")
 
 
-if __name__ == "__main__":  # pragma: no cover
+def main():
     cli = CLI()
-    cli.main()
+    cli.cli()
+
+
+if __name__ == "__main__":  # pragma: no cover
+    main()

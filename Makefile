@@ -7,7 +7,7 @@ help:
 	@echo  "    deps          Installs dev/test dependencies"
 	@echo  "    lint          Reports/Fixes linter violations"
 	@echo  "    test          Runs all tests"
-	@echo  "    run           Runs the application"
+	@echo  "    compile       Compiles the application into an executale file"
 
 update:
 	pip-compile -U --no-emit-index-url --no-emit-trusted-host requirements.in
@@ -28,3 +28,9 @@ lint:
 
 test:
 	scripts/test.sh
+
+compile:
+	pyinstaller --onefile cli.py --name ranking_calculator
+	mv ./dist/ranking_calculator ./
+	rm -rf build
+	rm -rf dist
