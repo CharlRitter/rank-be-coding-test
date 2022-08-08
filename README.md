@@ -12,6 +12,7 @@
   - [1. Compiled executale (preferred)](#1-compiled-executale-preferred)
   - [2. Directly executing the CLI using](#2-directly-executing-the-cli-using)
 - [Technologies Used](#technologies-used)
+- [Future Expansions](#future-expansions)
 - [Installation Instructions](#installation-instructions)
   - [Update requirements](#update-requirements)
   - [Installs dependencies](#installs-dependencies)
@@ -81,6 +82,10 @@ Note: Since this project should run on OSX, I will have included a OSX compatibl
 - For testing the `pytest`, `coverage`, `mockito` & `parameterized` libraries were used.
 - For code quality the `pre-commit`, `black`, `flake8`, `isort`, & `pylint` libraries were used.
 - For dependency management the `pip-tools` library was used.
+- Github actions were used to automate testing & linting
+
+## Future Expansions
+- Using the Github actions, it would've been useful to automate the compilation to an executable file as well, but since `pyinstaller` compiles the exectable to be compatible with the OS the user is using, the compiled executable file would only work on the OS of whatever Github runs their actions on (some light-weight Linux probably). Thus in future it would be great to find a library that can compile it into three executable files, one for the 3 most popular OS's, and have it auto compile as part of Github actions.
 
 ## Installation Instructions
 Before running the following commands, please ensure you have started a virtual environment.
