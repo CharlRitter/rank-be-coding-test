@@ -1,4 +1,4 @@
-checkfiles = application tests setup.py
+checkfiles = application tests cli.py setup.py
 
 help:
 	@echo  "usage: make <target>"

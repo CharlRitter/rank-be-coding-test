@@ -31,7 +31,7 @@ class CLI:
 
         return parser
 
-    def __get_input__(self, manual_input_flag: bool, input_path: str = "") -> List:
+    def __get_input__(self, manual_input_flag: bool, file_path: str) -> List:
         raw_input = []
 
         if manual_input_flag:
@@ -51,14 +51,17 @@ class CLI:
                 else:
                     raw_input.append(result)
 
-        elif not input_path.lower().endswith((".txt")):
-            print("The path specified is not a text file.")
+        elif file_path != "" and not file_path.lower().endswith((".txt")):
+            print("The path specified is not a text file. The provided file must be a text file.")
             sys.exit()
-        elif not os.path.exists(input_path):
-            print("The path specified does not exist.")
+        elif not os.path.exists(file_path):
+            print(
+                "The path specified does not exist. Please refine the path to the file or run \
+`ranking_calculator -h` for more information on how to use this CLI."
+            )
             sys.exit()
         else:
-            with open(input_path, "r", encoding="utf8") as file:
+            with open(file_path, "r", encoding="utf8") as file:
                 raw_input = [result.rstrip("\n") for result in file]
 
         if len(raw_input) == 0:
@@ -70,8 +73,10 @@ class CLI:
     def cli(self, argv: List = None) -> None:
         parser = self.__create_parser__()
         args = parser.parse_args(argv)
+        manual_input_flag = args.input
+        file_path = args.path or ""
 
-        raw_input = self.__get_input__(args.input, args.path)
+        raw_input = self.__get_input__(manual_input_flag, file_path)
 
         calculator = RankingCalculator()
         calculator.process_results(raw_input)

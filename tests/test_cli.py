@@ -32,7 +32,7 @@ class TestCLI(TestCase):
             "Lions 4, Grouches 0",
         ]
 
-        expect(CLI, times=1).__get_input__(True, None).thenReturn(raw_input)
+        expect(CLI, times=1).__get_input__(True, "").thenReturn(raw_input)
         expect(RankingCalculator, times=1).process_results(raw_input).thenReturn(None)
 
         assert self.cli.cli(["-i"]) is None
@@ -52,7 +52,7 @@ class TestCLI(TestCase):
             "Lions 3, Snakes 3\nTarantulas 1, FC Awesome 0\nLions 1, FC Awesome 1\nTarantulas 3, Snakes 1\n\n"
         )
 
-        assert self.cli.__get_input__(True, None) == raw_input
+        assert self.cli.__get_input__(True, "") == raw_input
 
     def test_get_input_success_manual_input_exit(self) -> None:
         """
@@ -61,7 +61,7 @@ class TestCLI(TestCase):
         sys.stdin = StringIO("Lions 3, Snakes 3\nTarantulas 1, FC Awesome 0\nLions 1, FC Awesome 1\nexit\n")
 
         with self.assertRaises(SystemExit):
-            self.cli.__get_input__(True, None)
+            self.cli.__get_input__(True, "")
 
     def test_get_input_fail_no_input(self) -> None:
         """
@@ -70,7 +70,7 @@ class TestCLI(TestCase):
         sys.stdin = StringIO("\n")
 
         with self.assertRaises(SystemExit):
-            self.cli.__get_input__(True, None)
+            self.cli.__get_input__(True, "")
 
     def test_get_input_success_file_input(self) -> None:
         """
