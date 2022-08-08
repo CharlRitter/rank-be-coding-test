@@ -59,12 +59,13 @@ The CLI also has 2 suppourting flags. `-h, --help` for help and `-v, --version `
 There are 2 ways one can run this project
 
 ### 1. Compiled executale (preferred)
+Note: Since this project should run on OSX, I will have included a OSX compatible executable file in the root folder already.
 1. Clone the repo
 2. Create a virtual environment
 3. Run `make deps`
 4. Run `make compile`
 5. In the root folder a new exe file should appear
-6. From the root folder the CLI can be started using the executale. PS. try `ranking_calculator -h` (Since this project should run on OSX, I will have included a OSX compatible executable file in the root folder already)
+6. From the root folder the CLI can be started using the executale. PS. try `ranking_calculator -h`
 
 ### 2. Directly executing the CLI using
 1. Clone the repo
