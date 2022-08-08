@@ -85,10 +85,10 @@ Note: Since this project should run on OSX, I will have included a OSX compatibl
 - Github actions were used to automate testing & linting
 
 ## Future Expansions
-- Using the Github actions, it would've been useful to automate the compilation to an executable file as well, but since `pyinstaller` compiles the exectable to be compatible with the OS the user is using, the compiled executable file would only work on the OS of whatever Github runs their actions on (some light-weight Linux probably). Thus in future it would be great to find a library that can compile it into three executable files, one for the 3 most popular OS's, and have it auto compile as part of Github actions.
+Using the Github actions, it would've been useful to automate the compilation to an executable file as well, but since `pyinstaller` compiles the exectable to be compatible with the OS the user is using, the compiled executable file would only work on the OS of whatever Github runs their actions on (some light-weight Linux probably). Thus in future it would be great to find a library that can compile it into three executable files, one for the 3 most popular OS's, and have it auto compile as part of Github actions.
 
 ## Installation Instructions
-Before running the following commands, please ensure you have started a virtual environment.
+Before running the following commands, please ensure you have started a python 3.10 virtual environment.
 
 ### Update requirements
 `make update`
@@ -101,9 +101,9 @@ Before running the following commands, please ensure you have started a virtual 
 ![page2](https://github.com/CharlRitter/span-ranking-coding-test/blob/main/assets/problem_statement_2.png)
 
 ## Miscellaneous
-Before running the following commands, please ensure you have started a virtual environment and run the `make deps` command.
+Before running the following commands, please ensure you have started a python 3.10 virtual environment and run the `make deps` command.
 
-###  Compiling into executale file
+### Compiling into executale file
 `make compile`
 
 ### Running the tests
