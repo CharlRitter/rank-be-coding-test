@@ -11,11 +11,7 @@ class CLI:
         with open("version", "r", encoding="utf8") as version_file:
             version = version_file.read().strip()
 
-        parser = ArgumentParser(
-            description="Calculate the ranking table for a league's results",
-            prog="ranking_calculator",
-            epilog="If no flags were provided, %(prog)s will take manual input.",
-        )
+        parser = ArgumentParser(description="Calculate the ranking table for a league's results")
         parser.version = version
 
         parser.add_argument(
